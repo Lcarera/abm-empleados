@@ -3,8 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 
-import { Empleado } from '../../interfaces/empleado.interface';
-import { EmpleadoService } from '../../services/empleado-service.service';
+import { Empleado } from '@/interfaces/empleado.interface';
+import { EmpleadoService } from '@/services/empleado-service.service';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';

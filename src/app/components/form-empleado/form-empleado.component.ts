@@ -7,8 +7,8 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Empleado } from '../../interfaces/empleado.interface';
-import { EmpleadoService } from '../../services/empleado-service.service';
+import { Empleado } from '@/interfaces/empleado.interface';
+import { EmpleadoService } from '@/services/empleado-service.service';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Empleado } from '../interfaces/empleado.interface';
+import { Empleado } from '@/interfaces/empleado.interface';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
