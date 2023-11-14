@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
-import { FormEmpleadoComponent } from './components/form-empleado/form-empleado.component';
+import { ListaEmpleadosComponent } from '@/components/lista-empleados/lista-empleados.component';
+import { FormEmpleadoComponent } from '@/components/form-empleado/form-empleado.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'empleado/list', pathMatch: 'full' },
