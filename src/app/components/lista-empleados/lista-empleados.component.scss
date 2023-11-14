@@ -1,0 +1,32 @@
+.margin-list {
+    margin: 2em;
+   
+}
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 50%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+tr {
+    cursor: pointer;
+}

@@ -1,0 +1,50 @@
+<form [formGroup]="empleadoForm" novalidate (ngSubmit)="onSubmit()">
+	<mat-card class="mat-elevation-z8 shipping-card ">
+		<mat-card-header>
+			<mat-card-title style="margin-bottom: 1em;">Nuevo Empleado</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="row">
+				<div class="col">
+					<mat-form-field class="full-width">
+						<input matInput placeholder="Nombre" formControlName="name">
+						@if (empleadoForm.controls['name'].hasError('required')) {
+						<mat-error>
+							Nombre es <strong>obligatorio</strong>
+						</mat-error>
+						}
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<mat-form-field class="full-width">
+						<input matInput placeholder="Puesto de Trabajo" formControlName="jobTitle">
+						@if (empleadoForm.controls['jobTitle'].hasError('required')) {
+						<mat-error>
+							Puesto de trabajo es <strong>obligatorio</strong>
+						</mat-error>
+						}
+					</mat-form-field>
+				</div>
+				<div class="col">
+					<mat-form-field class="full-width">
+						<input matInput placeholder="Departamento" formControlName="department">
+						@if (empleadoForm.controls['department'].hasError('required')) {
+						<mat-error>
+							Departamento es <strong>obligatorio</strong>
+						</mat-error>
+						}
+					</mat-form-field>
+				</div>
+			</div>
+		</mat-card-content>
+		<mat-card-actions align="end">
+			<button mat-raised-button color="accent" type="submit">Aceptar</button>
+			@if (id !== -1) {
+				<button mat-raised-button color="warn" type="button" (click)="deleteEmpleado()">Eliminar</button>
+			}
+			<a mat-raised-button color="primary" href="empleado/list">Volver</a>
+		</mat-card-actions>
+	</mat-card>
+</form>

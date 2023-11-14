@@ -1,0 +1,81 @@
+@use '@angular/material' as mat;
+
+$calim-azul: (
+    50 : #e0f6fa,
+    100 : #b3e9f1,
+    200 : #82dae8,
+    300 : #53cbde,
+    400 : #36c0d6,
+    500 : #28b5cf,
+    600 : #24a5bc,
+    700 : #2091A2,
+    800 : #1c7d8a,
+    900 : #165a5f,
+    A100 : #ff76ff,
+    A200 : #ff43ff,
+    A400 : #ff10ff,
+    A700 : #f600f6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$calim-verde: (
+    50 : #f7fae8,
+    100 : #ebf2c5,
+    200 : #deeba1,
+    300 : #d2e27d,
+    400 : #c9dc62,
+    500 : #c1d64a,
+    600 : #b5c444,
+    700 : #a4af3c,
+    800 : #949835,
+    900 : #787229,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-primary: mat.define-palette($calim-azul, 700);
+$my-accent: mat.define-palette($calim-verde, 500);
+
+$calim-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@include mat.all-component-themes($calim-theme);
