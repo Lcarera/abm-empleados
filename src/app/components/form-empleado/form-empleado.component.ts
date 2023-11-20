@@ -15,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import Swal from 'sweetalert2';
+import { SwalService } from '@/services/swal-service.service';
 
 @Component({
   selector: 'app-form-empleado',
@@ -39,7 +39,8 @@ export class FormEmpleadoComponent implements OnInit {
     private fb: FormBuilder,
     private empleadoService: EmpleadoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private swalService: SwalService
   ) {
     this.empleadoForm = this.fb.group({
       name: ['', Validators.required],
@@ -121,16 +122,7 @@ export class FormEmpleadoComponent implements OnInit {
   }
 
   deleteEmpleado() {
-    Swal.fire({
-      title: '¿Estas seguro?',
-      text: "Se eliminara el empleado",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#f44336',
-      cancelButtonColor: '#2091a2',
-      confirmButtonText: 'Si, eliminar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
+    this.swalService.swalDelete().then((result) => {
       if (result.isConfirmed) {
         this.empleadoService.deleteEmpleado(this.id).subscribe({
           next: (empleado) => {
