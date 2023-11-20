@@ -125,7 +125,7 @@ export class FormEmpleadoComponent implements OnInit {
     this.swalService.swalDelete().then((result) => {
       if (result.isConfirmed) {
         this.empleadoService.deleteEmpleado(this.id).subscribe({
-          next: (empleado) => {
+          next: () => {
             this.navigateToEmpleados(this.getNuevoEmpleado(), 'delete');
           },
           error: (error) => {
