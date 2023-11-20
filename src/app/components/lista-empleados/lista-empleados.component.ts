@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Empleado } from '@/interfaces/empleado.interface';
@@ -35,7 +35,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 export class ListaEmpleadosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'jobTitle', 'department'];
   dataSource!: MatTableDataSource<Empleado>;
-  empleados!: Empleado[] | null;
+  empleados = signal<Empleado[]>([]);
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
@@ -48,8 +48,8 @@ export class ListaEmpleadosComponent implements OnInit {
   ngOnInit() {
     this.empleadoService.getEmpleados().subscribe({
       next: (empleados) => {
-        this.empleados = empleados;
-        this.dataSource = new MatTableDataSource(this.empleados);
+        this.empleados.set(empleados);
+        this.dataSource = new MatTableDataSource(this.empleados());
         this.dataSource.sort = this.sort;
         this.activatedRoute.queryParams.subscribe((params) => {
           this.swalService.validarMensaje(
@@ -59,8 +59,8 @@ export class ListaEmpleadosComponent implements OnInit {
         });
       },
       error: (error) => {
-        this.empleados = [];
-        this.dataSource = new MatTableDataSource(this.empleados);
+        this.empleados.set([]);
+        this.dataSource = new MatTableDataSource(this.empleados());
         this.dataSource.sort = this.sort;
         this.swalService.mostrarMensaje('error', '');
         console.error(error);
