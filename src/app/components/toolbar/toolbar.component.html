@@ -1,3 +1,19 @@
-<mat-toolbar color="primary">
-  <span>ABM Empleados</span>
-</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'" [mode]="'side'" [opened]="false">
+    <mat-toolbar color="accent">Menu</mat-toolbar>
+    <mat-nav-list disableRipple="true">
+      @for(item of menuItems; track item.href ) {
+        <a mat-list-item [href]="item.href" [class.url-actual]="isCurrentUrl(item.href)">{{item.name}}</a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>abm-empleados</span>
+    </mat-toolbar>
+    <ng-content />
+  </mat-sidenav-content>
+</mat-sidenav-container>

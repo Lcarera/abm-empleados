@@ -1,12 +1,36 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
+type ItemMenu = {
+  name: string;
+  href: string;
+};
 @Component({
   selector: 'app-toolbar',
-  standalone: true,
-  imports: [CommonModule, MatToolbarModule],
   templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.scss',
+  styleUrls: ['./toolbar.component.scss'],
+  standalone: true,
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+  ],
 })
-export class ToolbarComponent {}
+export class ToolbarComponent {
+
+  constructor() {}
+  menuItems: ItemMenu[] = [
+    { name: 'Lista Empleados', href: '/empleado/list'},
+    { name: 'Agregar Empleado', href: '/empleado/create'},
+  ];
+  
+  isCurrentUrl(href: string): boolean {
+    return window.location.href.includes(href);
+  }
+}

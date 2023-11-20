@@ -1,0 +1,23 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mdc-list{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.url-actual{
+  background-color: #b3e9f1;
+}
