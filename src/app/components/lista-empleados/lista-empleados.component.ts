@@ -3,8 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Empleado } from '@/interfaces/empleado.interface';
-import { EmpleadoService } from '@/services/empleado-service.service';
-import { SwalService } from '@/services/swal-service.service';
+import { EmpleadoService } from '@/services/empleado/empleado-service.service';
+import { SwalService } from '@/services/swal/swal-service.service';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -31,7 +31,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
   ],
   templateUrl: './lista-empleados.component.html',
   styleUrl: './lista-empleados.component.scss',
-  providers: [EmpleadoService],
 })
 export class ListaEmpleadosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'jobTitle', 'department'];

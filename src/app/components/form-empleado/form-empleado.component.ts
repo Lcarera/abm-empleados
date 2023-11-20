@@ -8,14 +8,14 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Empleado } from '@/interfaces/empleado.interface';
-import { EmpleadoService } from '@/services/empleado-service.service';
+import { EmpleadoService } from '@/services/empleado/empleado-service.service';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { SwalService } from '@/services/swal-service.service';
+import { SwalService } from '@/services/swal/swal-service.service';
 
 @Component({
   selector: 'app-form-empleado',
