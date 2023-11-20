@@ -1,13 +1,14 @@
 <form [formGroup]="empleadoForm" novalidate (ngSubmit)="onSubmit()">
 	<mat-card class="mat-elevation-z8 shipping-card ">
 		<mat-card-header>
-			<mat-card-title style="margin-bottom: 1em;">Nuevo Empleado</mat-card-title>
+			<mat-card-title style="margin-bottom: 1em;">@if(id === -1){Nuevo Empleado}@else{Editar Empleado}</mat-card-title>
 		</mat-card-header>
 		<mat-card-content>
 			<div class="row">
 				<div class="col">
-					<mat-form-field class="full-width">
-						<input matInput placeholder="Nombre" formControlName="name">
+					<mat-form-field  appearance="outline" class="full-width">
+						<mat-label>Nombre</mat-label>
+						<input matInput placeholder="Ejemplo: Jose" formControlName="name">
 						@if (empleadoForm.controls['name'].hasError('required')) {
 						<mat-error>
 							Nombre es <strong>obligatorio</strong>
@@ -18,8 +19,9 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<mat-form-field class="full-width">
-						<input matInput placeholder="Puesto de Trabajo" formControlName="jobTitle">
+					<mat-form-field  appearance="outline" class="full-width">
+						<mat-label>Puesto de Trabajo</mat-label>
+						<input matInput placeholder="Ejemplo: Contador" formControlName="jobTitle">
 						@if (empleadoForm.controls['jobTitle'].hasError('required')) {
 						<mat-error>
 							Puesto de trabajo es <strong>obligatorio</strong>
@@ -28,8 +30,9 @@
 					</mat-form-field>
 				</div>
 				<div class="col">
-					<mat-form-field class="full-width">
-						<input matInput placeholder="Departamento" formControlName="department">
+					<mat-form-field  appearance="outline" class="full-width">
+						<mat-label>Departamento</mat-label>
+						<input matInput placeholder="Ejemplo: Contaduria" formControlName="department">
 						@if (empleadoForm.controls['department'].hasError('required')) {
 						<mat-error>
 							Departamento es <strong>obligatorio</strong>
