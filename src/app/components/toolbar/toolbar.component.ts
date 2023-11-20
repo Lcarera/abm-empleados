@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 type ItemMenu = {
   name: string;
@@ -20,6 +21,8 @@ type ItemMenu = {
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    RouterLink, 
+    RouterLinkActive
   ],
 })
 export class ToolbarComponent {

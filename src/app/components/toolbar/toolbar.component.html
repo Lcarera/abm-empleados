@@ -3,7 +3,7 @@
     <mat-toolbar color="accent">Menu</mat-toolbar>
     <mat-nav-list disableRipple="true">
       @for(item of menuItems; track item.href ) {
-        <a mat-list-item [href]="item.href" [class.url-actual]="isCurrentUrl(item.href)">{{item.name}}</a>
+        <a mat-list-item [routerLink]="item.href" routerLinkActive="active" ariaCurrentWhenActive="page" [class.url-actual]="isCurrentUrl(item.href)">{{item.name}}</a>
       }
     </mat-nav-list>
   </mat-sidenav>

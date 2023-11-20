@@ -6,7 +6,7 @@ import {
   Validators,
   FormGroup,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Empleado } from '@/interfaces/empleado.interface';
 import { EmpleadoService } from '@/services/empleado/empleado-service.service';
 
@@ -29,6 +29,7 @@ import { SwalService } from '@/services/swal/swal-service.service';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
+    RouterLink,
   ],
 })
 export class FormEmpleadoComponent implements OnInit {

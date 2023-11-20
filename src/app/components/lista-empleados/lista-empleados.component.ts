@@ -35,7 +35,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 export class ListaEmpleadosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'jobTitle', 'department'];
   dataSource!: MatTableDataSource<Empleado>;
-  empleados!: Empleado[];
+  empleados!: Empleado[] | null;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
